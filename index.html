@@ -1,60 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QUEREMOS LIGHT 💘</title>
   <style>
+    :root {
+      --padding-base: 6vw;
+      --font-lg: 9vw;
+      --font-md: 5vw;
+      --font-sm: 4vw;
+    }
+
     body {
+      margin: 0;
+      padding: var(--padding-base);
       background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
       color: white;
       font-family: 'Courier New', monospace;
       text-align: center;
-      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
     }
+
     h1 {
       animation: pulse 1.5s infinite;
-      font-size: 3em;
+      font-size: var(--font-lg);
+      margin-bottom: 20px;
     }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+
+    p {
+      font-size: var(--font-md);
+      max-width: 90%;
     }
+
     button {
       background-color: #ff007f;
       color: white;
-      padding: 15px 30px;
-      font-size: 18px;
+      padding: 4vw 8vw;
+      font-size: var(--font-md);
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      margin-top: 30px;
+      margin-top: 5vw;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
     }
+
     #gato {
       position: relative;
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
       background-image: url('https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif');
       background-size: cover;
       display: none;
       margin: 30px auto;
       animation: caminar 5s linear forwards;
     }
+
     @keyframes caminar {
       from { left: -100px; }
       to { left: 100%; }
     }
+
     #mensaje {
-      font-size: 24px;
+      font-size: var(--font-md);
       margin-top: 20px;
       display: none;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    /* ✅ Responsive para pantallas grandes */
+    @media screen and (min-width: 768px) {
+      :root {
+        --font-lg: 4vw;
+        --font-md: 2vw;
+        --font-sm: 1.5vw;
+      }
+
+      #gato {
+        width: 160px;
+        height: 160px;
+      }
+
+      button {
+        padding: 16px 32px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>SACHY buen dia espero estes bien 💌</h1>
+  <h1>SACHY buen día, espero estés bien 💌</h1>
   <p>Tu nombre está tatuado en mis líneas de código...</p>
   <button onclick="mostrarGato()">Iniciar confesión</button>
   <div id="gato"></div>
-  <div id="mensaje">🐱 QUEREMOS LIGHTFortnite  💥</div>
+  <div id="mensaje">🐱 QUEREMOS LIGHT Fortnite 💥</div>
 
   <script>
     function mostrarGato() {
@@ -66,4 +113,3 @@
   </script>
 </body>
 </html>
- 
